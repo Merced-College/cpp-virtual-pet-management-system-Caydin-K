@@ -15,6 +15,7 @@ public:
     // Constructors
     Pet();
     Pet(const std::string& name, const std::string& species, int age, int hungerLevel);
+    virtual ~Pet(); // Virtual destructor to prevent memory leaks
 
     // Accessors (Getters)
     std::string getName() const;
@@ -31,8 +32,9 @@ public:
     // CompareTo
     int compareTo(const Pet& other) const; // Returns -1, 0, or 1 based on name comparison
 
-    // Output Function
-    void printInfo() const;
+    // Output Functions
+    virtual void printInfo() const;
+    virtual void makeSound() const; // Virtual function for sound
 };
 
 #endif
